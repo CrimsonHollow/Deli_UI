@@ -1,8 +1,11 @@
 Deli_UI is a standalone addon of my favourite features from addons like 
 
 Shagutweaks
+
 Shagutweaks-mods 
+
 Shagutweaks-more-mods by me
+
 tDF
 
 
@@ -17,9 +20,16 @@ It for me is a lightweight mix of what i like in a UI,If you want something spec
 Addons I recomend with my UI! 
 
 SP_Swingtimer
+
 Adapt
+
 BetterCharacterStats
+
 MCP
+
 SmartBuff
+
 Flyout
+
 Shagutweaks (for debuff timers mostly)
+
