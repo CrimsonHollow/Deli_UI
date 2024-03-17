@@ -21,17 +21,17 @@ It for me is a lightweight mix of what i like in a UI,If you want something spec
 
 Addons I recomend with my UI! 
 
-SP_Swingtimer
+[SP_Swingtimer](https://github.com/balakethelock/SP_SwingTimer)
 
 Adapt
 
-BetterCharacterStats
+[BetterCharacterStats](https://github.com/yutsuku/BetterCharacterStats)
 
-MCP
+[MCP](https://github.com/mrrosh/MCP)
 
-SmartBuff
+[SmartBuff](https://github.com/Lexiebean/SmartBuff)
 
-Flyout
+[Flyout](https://github.com/luskanek/Flyout)
 
 Shagutweaks (for debuff timers mostly)
 
