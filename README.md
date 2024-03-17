@@ -1,13 +1,13 @@
 # Deli UI
 This is a standalone addon of my favourite features from addons like 
 
-Shagutweaks by [shagu](https://github.com/shagu)   
+[Shagutweaks](https://github.com/shagu/ShaguTweaks/) by [shagu](https://github.com/shagu)   
 
-Shagutweaks-mods [ShaguTweaks-mods](https://github.com/GryllsAddons/ShaguTweaks-mods)  
+[ShaguTweaks-mods](https://github.com/GryllsAddons/ShaguTweaks-mods)  by [Grylls](https://github.com/GryllsAddons)
 
-Shagutweaks-more-mods by me [ShaguTweaks-more-mods](https://github.com/CrimsonHollow/ShaguTweaks-more-mods)
+[ShaguTweaks-more-mods](https://github.com/CrimsonHollow/ShaguTweaks-more-mods) by me 
 
-tDF [tDF](https://github.com/TheLinuxITGuy/Turtle-Dragonflight)
+[tDF](https://github.com/TheLinuxITGuy/Turtle-Dragonflight) by [TheLinuxITGuy](https://github.com/TheLinuxITGuy)
 
 With the help and patience of [Ennea](https://github.com/Ennea)  and [TheLinuxITGuy](https://github.com/TheLinuxITGuy)
 
