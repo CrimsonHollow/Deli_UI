@@ -1,0 +1,46 @@
+## Interface: 11200
+## Title: |cFFDC143CDeli|cFFB8860BUI
+## Author: Delirium - CrimsonHollow @ Github
+## Notes: A Personalised Ui based on Turtle Dragonflight.
+## Version: 1.0
+## DefaultState: enabled
+
+
+#actionbars
+mods\actionbars\DFHordeStatues.lua
+mods\actionbars\HD-ActionBars.lua
+mods\actionbars\MicroMenu.lua
+mods\actionbars\Reduced-actionbar.lua
+mods\actionbars\CooldownNumbers.lua
+mods\actionbars\Deli_XP.lua
+mods\actionbars\bags.lua
+mods\actionbars\rightbar-center.lua
+
+#castbar
+mods\castbar\castbar.lua
+
+#buffs
+mods\buffs\Deli_Buffs.lua
+
+#minimap
+mods\minimap\minimap.lua
+
+#other
+mods\other\dark-ui.lua
+mods\other\Deli_Ui.lua
+mods\other\My_UI.lua
+mods\other\compare.lua
+mods\other\classcolors.lua
+
+
+#unitframes
+mods\unitframes\unitframes.lua
+mods\unitframes\abbrev-names.lua
+mods\unitframes\health-numbers-extended.lua
+mods\unitframes\target-castbar.lua
+mods\unitframes\target-debufftimer.lua
+mods\unitframes\targetbuffs.lua
+mods\unitframes\target-debufftimer.lua
+
+#libraries
+libs\libhealth.lua
