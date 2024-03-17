@@ -1,13 +1,15 @@
-Deli_UI is a standalone addon of my favourite features from addons like 
+# Deli UI
+This is a standalone addon of my favourite features from addons like 
 
-Shagutweaks
+Shagutweaks by [shagu](https://github.com/shagu)   
 
-Shagutweaks-mods 
+Shagutweaks-mods [ShaguTweaks-mods](https://github.com/GryllsAddons/ShaguTweaks-mods)  
 
-Shagutweaks-more-mods by me
+Shagutweaks-more-mods by me [ShaguTweaks-more-mods](https://github.com/CrimsonHollow/ShaguTweaks-more-mods)
 
-tDF
+tDF [tDF](https://github.com/TheLinuxITGuy/Turtle-Dragonflight)
 
+With the help and patience of [Ennea](https://github.com/Ennea)  and [TheLinuxITGuy](https://github.com/TheLinuxITGuy)
 
 It for me is a lightweight mix of what i like in a UI,If you want something specific/want a suggestion let me know on discord! Username: Arkoudokinigos
 
