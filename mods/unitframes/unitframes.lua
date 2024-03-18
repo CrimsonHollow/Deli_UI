@@ -21,6 +21,11 @@ local customfont = addonpath .. "\\fonts\\PROTOTYPE.TTF"
 
 --hide
 PlayerFrame.name:Hide()
+PlayerFrameGroupIndicator:SetAlpha(0)
+    PlayerHitIndicator:SetText(nil)
+    PlayerHitIndicator.SetText = function() end
+    PetHitIndicator:SetText(nil)
+    PetHitIndicator.SetText = function() end
 
 
 
