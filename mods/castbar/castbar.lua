@@ -1,132 +1,131 @@
 --[[
-Author: ShaguTweaks
-Modified by: YouTube.com/@TheLinuxITGuy
+Author: YouTube.com/@TheLinuxITGuy
 Built on: Linux Mint Debian Edition 12
 This lua file hides the original Blizzard art work from 1.12. I've created new buttons and textured them to match
 Dragonflight.
 ]]
 
 local addonpath = "Interface\\AddOns\\Deli_Ui"
-	local customfont = addonpath .. "\\fonts\\PROTOTYPE.TTF"
+local customfont = addonpath .. "\\fonts\\PROTOTYPE.TTF"
 
--- Create a tCastbar frame
-local tCastbar = CreateFrame("StatusBar", "CastBar", UIParent)
-tCastbar:SetWidth(250)
-tCastbar:SetHeight(18)
---tCastbar:SetPoint("CENTER", UIParent, "CENTER", 0, -425)
--- Get the position of ActionButton6
-local width = tCastbar:GetWidth()
-local point, relativeTo, relativePoint, xOfs, yOfs = ActionButton7:GetPoint()
--- Set the point of the tCastbar frame to be 4 pixels above ActionButton6
-tCastbar:SetPoint(point, relativeTo, relativePoint, xOfs - width/2, yOfs + 175)
-tCastbar:SetStatusBarTexture("Interface\\AddOns\\Deli_Ui\\img\\Castbar\\CastingBarStandard2")
-tCastbar:SetStatusBarColor(0.8, 0.8, 0.8)
+local w = 250
+local h = 20
+
+--CastingBarFrame
+--CastingBarBorder
+--CastingBarSpark
+--CastingBarFlash
+--CastingBarText
 
 
 
--- Hide the tCastbar initially
-tCastbar:Hide()
-CastingBarFrame:UnregisterAllEvents()
-CastingBarFrame:Hide()
+local castbar = CastingBarFrame
+castbar:SetStatusBarTexture("Interface\\AddOns\\Deli_Ui\\img\\Castbar\\CastingBarStandard2")
+castbar:SetWidth(w)
+castbar:SetHeight(h)
 
--- Create a border and a background for the tCastbar
-local border = CreateFrame("Frame", nil, tCastbar)
-border:SetBackdrop({
-  edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
-  --edgeFile = "Interface\\AddOns\\Deli_Ui\\img\\Castbar\\CastingBarFrame2",
-  edgeSize = 16,
-  insets = { left = 4, right = 4, top = 4, bottom = 4 }
-})
-border:SetBackdropBorderColor(0.5, 0.5, 0.5)
-border:SetPoint("TOPLEFT", tCastbar, -5, 5)
-border:SetPoint("BOTTOMRIGHT", tCastbar, 5, -5)
+local castbartext = CastingBarText
+castbartext:SetFont(customfont, 12, "OUTLINE")
+castbartext:ClearAllPoints()
+castbartext:SetPoint("CENTER", castbar, "CENTER", 0, 1)
+castbartext:SetTextColor(1,1,1)
 
-local background = tCastbar:CreateTexture(nil, "BACKGROUND")
-background:SetTexture(0, 0, 0, 0.5)
---background:SetTexture("Interface\\AddOns\\Deli_Ui\\img\\Castbar\\CastingBarBackground2")
-background:SetAllPoints(tCastbar)
+ -- local border = CastingBarBorder
+-- border:SetTexture("Interface\\AddOns\\Deli_Ui\\img\\Castbar\\CastingBarFrame2")
+-- -- Set the border size to match the castbar
+-- border:SetWidth(castbar:GetWidth() + 5)
+-- border:SetHeight(castbar:GetHeight()+ 5)
+-- border:ClearAllPoints()
+-- border:SetPoint("CENTER", castbar, "CENTER", 0, 0)
 
--- Create a text for the tCastbar
-local text = tCastbar:CreateFontString(nil, "OVERLAY")
-text:SetFont(customfont, 12, "OUTLINE")
---text:SetFont("Interface\\Addons\\Deli_Ui\\fonts\\Prototype.TTF", 12, "OUTLINE")
-text:SetPoint("CENTER", tCastbar, "CENTER", 0, 1)
-text:SetTextColor(1, 1, 1)
+CastingBarBorder:ClearAllPoints()
+CastingBarBorder:SetPoint("TOPLEFT", CastingBarFrame, "TOPLEFT", -2 , 2)
+CastingBarBorder:SetPoint("BOTTOMRIGHT", CastingBarFrame, "BOTTOMRIGHT", 2, -2) 
+CastingBarBorder:SetTexture("Interface\\Addons\\Deli_Ui\\img\\Castbar\\CastingBarFrame2")
 
--- Create a spark for the tCastbar
-local spark = tCastbar:CreateTexture(nil, "OVERLAY")
+if ShaguTweaks.DarkMode then
+	ShaguTweaks.AddBorder(castbar, bottom ,  .3, .3, .3, 1 )
+     :SetVertexColor( .3, .3, .3, 1)
+    end   
+
+local spark = CastingBarSpark
 spark:SetTexture("Interface\\AddOns\\Deli_Ui\\img\\Castbar\\CastingBarSpark")
-spark:SetBlendMode("ADD")
-spark:SetWidth(20)
-spark:SetHeight(25)
+spark:ClearAllPoints()
+-- spark:SetPoint("CENTER", castbar, "CENTER", 0,-2)
+spark:SetWidth(10)
+spark:SetHeight(h + 12)
 
--- Register for events and update the tCastbar
-tCastbar:RegisterEvent("SPELLCAST_START")
-tCastbar:RegisterEvent("SPELLCAST_STOP")
-tCastbar:RegisterEvent("SPELLCAST_FAILED")
-tCastbar:RegisterEvent("SPELLCAST_INTERRUPTED")
-tCastbar:RegisterEvent("SPELLCAST_DELAYED")
-tCastbar:RegisterEvent("SPELLCAST_CHANNEL_START")
-tCastbar:RegisterEvent("SPELLCAST_CHANNEL_UPDATE")
-tCastbar:RegisterEvent("SPELLCAST_CHANNEL_STOP")
+local flash = CastingBarFlash
+flash:ClearAllPoints()
+flash:SetPoint("CENTER", UIParent, 5000, 0)
 
-tCastbar:SetScript("OnEvent", function()
-    local event = event
-    local arg1 = arg1
-    local arg2 = arg2
-    if event == "SPELLCAST_START" then
-      tCastbar.casting = true
-      tCastbar.startTime = GetTime()
-      tCastbar.maxValue = arg2 / 1000
-      -- Show the tCastbar and set the max value
-      tCastbar:Show()
-      tCastbar:SetMinMaxValues(0, tCastbar.maxValue)
-      tCastbar:SetValue(0)
-      -- Set the text to the spell name
-      text:SetText(arg1)
-      -- Set the spark position
-      spark:SetPoint("CENTER", tCastbar, "LEFT", 0, 0)
-    end
 
-    if event == "SPELLCAST_STOP" or event == "SPELLCAST_CHANNEL_STOP" then
-      tCastbar.casting = false
-      -- Hide the tCastbar
-      tCastbar:Hide()
+--icon logic
+
+-- castbar.texture = CreateFrame("Frame", nil, castbar)
+    -- castbar.texture:SetPoint("RIGHT", CastingBarFrame, "LEFT", -10, 2)
+    -- castbar.texture:SetWidth(28)
+    -- castbar.texture:SetHeight(28)
+	
+	
+	
+    -- castbar.texture.icon = castbar.texture:CreateTexture(nil, "BACKGROUND")
+    -- castbar.texture.icon:SetPoint("CENTER", 0, 0)
+    -- castbar.texture.icon:SetWidth(24)
+    -- castbar.texture.icon:SetHeight(24)
+     -- castbar.texture:SetBackdrop({
+         -- -- edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border",
+         -- edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
+         -- tile = true, tileSize = 8, edgeSize = 12,
+         -- insets = { left = 2, right = 2, top = 2, bottom = 2 }
+     -- })
+
+--Hook & Reference Blizzards castbar
+function CastingBarFrame_OnUpdate()
+    if ( this.casting ) then
+        local status = GetTime();
+        if ( status > this.maxValue ) then
+            status = this.maxValue
+        end
+        CastingBarFrameStatusBar:SetValue(status);
+        CastingBarFlash:Hide();
+        local sparkPosition = ((status - this.startTime) / (this.maxValue - this.startTime)) * w;
+        if ( sparkPosition < 0 ) then
+            sparkPosition = 0;
+        end
+        CastingBarSpark:SetPoint("CENTER", CastingBarFrame, "LEFT", sparkPosition, -0);
+    elseif ( this.channeling ) then
+        local time = GetTime();
+        if ( time > this.endTime ) then
+            time = this.endTime
+        end
+        if ( time == this.endTime ) then
+            this.channeling = nil;
+            this.fadeOut = 1;
+            return;
+        end
+        local barValue = this.startTime + (this.endTime - time);
+        CastingBarFrameStatusBar:SetValue( barValue );
+        CastingBarFlash:Hide();
+        local sparkPosition = ((barValue - this.startTime) / (this.endTime - this.startTime)) * w;
+        CastingBarSpark:SetPoint("CENTER", CastingBarFrame, "LEFT", sparkPosition, -0);
+    elseif ( GetTime() < this.holdTime ) then
+        return;
+    elseif ( this.flash ) then
+        local alpha = CastingBarFlash:GetAlpha() + CASTING_BAR_FLASH_STEP;
+        if ( alpha < 1 ) then
+            CastingBarFlash:SetAlpha(alpha);
+        else
+            CastingBarFlash:SetAlpha(1.0);
+            this.flash = nil;
+        end
+    elseif ( this.fadeOut ) then
+        local alpha = this:GetAlpha() - CASTING_BAR_ALPHA_STEP;
+        if ( alpha > 0 ) then
+            this:SetAlpha(alpha);
+        else
+            this.fadeOut = nil;
+            this:Hide();
+        end
     end
-    if event == "SPELLCAST_FAILED" or event == "SPELLCAST_INTERRUPTED" then
-      -- Set the tCastbar color to red and the text to "Interrupted"
-      tCastbar:SetStatusBarColor(1, 0, 0)
-      text:SetText("Interrupted")
-      -- Set the spark position to the end
-      spark:SetPoint("CENTER", tCastbar, "RIGHT", 0, 0)
-      
-      -- Set a flag to revert the color after 1 second
-        tCastbar.revertColor = true
-        tCastbar.revertTime = GetTime() + 1
-        tCastbar:Hide()
-    end
-    if event == "SPELLCAST_DELAYED" then
-      -- Adjust the max value and the current value
-      local delay = arg1 / 1000
-      tCastbar.startTime = tCastbar.startTime + delay
-      tCastbar.maxValue = tCastbar.maxValue + delay
-      tCastbar:SetMinMaxValues(0, tCastbar.maxValue)
-    end
-  end)
-  
-  tCastbar:SetScript("OnUpdate", function(elapsed)
-    if tCastbar.casting then
-      -- Update the tCastbar value and the spark position
-      local value = GetTime() - tCastbar.startTime
-      tCastbar:SetValue(value)
-      local width = tCastbar:GetWidth()
-      local min, max = tCastbar:GetMinMaxValues()
-      local percent = (value - min) / (max - min)
-      spark:SetPoint("CENTER", tCastbar, "LEFT", width * percent, 0)
-    end
-      -- Revert the color if the flag is set and the time has come
-    if tCastbar.revertColor and GetTime() >= tCastbar.revertTime then
-      tCastbar:SetStatusBarColor(0.8, 0.8, 0.8)
-      tCastbar.revertColor = false
-    end
-  end)
+end

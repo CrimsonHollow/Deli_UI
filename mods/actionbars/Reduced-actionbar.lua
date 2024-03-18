@@ -192,8 +192,8 @@ local function bg(frame, i, c, a)
   for id, frame in pairs(resizes) do frame:SetWidth(511) end
 
   -- experience bar
-  MainMenuXPBarTexture0:SetPoint("LEFT", MainMenuExpBar, "LEFT")
-  MainMenuXPBarTexture1:SetPoint("RIGHT", MainMenuExpBar, "RIGHT")
+ MainMenuXPBarTexture0:SetPoint("LEFT", MainMenuExpBar, "LEFT")
+ MainMenuXPBarTexture1:SetPoint("RIGHT", MainMenuExpBar, "RIGHT")
 
   -- reputation bar
   ReputationWatchBar:SetPoint("BOTTOM", MainMenuExpBar, "TOP", 0, 0)
@@ -360,4 +360,4 @@ end
     end
 
 restyle:buttons()
-MainMenuExpBar:SetAlpha(0) --Required for tXPbar.lua to work
+-- MainMenuExpBar:SetAlpha(0) --Required for tXPbar.lua to work

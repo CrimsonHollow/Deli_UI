@@ -16,6 +16,11 @@
         TargetFrame:SetClampedToScreen(true)
         TargetFrame:ClearAllPoints()
         TargetFrame:SetPoint("LEFT", UIParent, "CENTER", 100, -210)
+		
+		--TargetOfTarget
+		TargetFrame:SetClampedToScreen(true)
+		TargetofTargetFrame:ClearAllPoints()
+		TargetofTargetFrame:SetPoint("RIGHT", TargetFrame, 55, -5)
 end
 
 

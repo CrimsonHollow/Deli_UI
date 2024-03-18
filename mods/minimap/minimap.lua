@@ -43,6 +43,13 @@ f:SetScript("OnEvent", function()
     borderTexture:SetTexture("Interface\\AddOns\\Deli_Ui\\img\\uiminimapborder.tga")
     borderTexture:SetAllPoints(customMinimap)
 
+	
+-- if ShaguTweaks.DarkMode then
+        -- if ShaguTweaks.DarkMode then
+		-- borderTexture:SetVertexColor( .3, .3, .3, 1)
+    -- end
+    -- end 
+
     --Add text over the Minimap
     MinimapZoneText:SetParent(UIParent)
     MinimapZoneText:ClearAllPoints()

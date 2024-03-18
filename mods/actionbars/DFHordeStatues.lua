@@ -12,6 +12,11 @@ MainMenuBarRightEndCap:Hide()
 local leftGryphon = MainMenuBar:CreateTexture(nil, "OVERLAY")
 local rightGryphon = MainMenuBar:CreateTexture(nil, "OVERLAY")
 
+-- Position the new textures
+leftGryphon:SetPoint("LEFT", MainMenuBarArtFrame, "LEFT", -90, 12)
+rightGryphon:SetPoint("RIGHT", MainMenuBarArtFrame, "RIGHT", 90, 12)
+
+
 --Checking Horde vs. Alliance wouldn't work, so using races
 local race = UnitRace("player")
 --DEFAULT_CHAT_FRAME:AddMessage("Your race is " .. race .. ".")
@@ -34,6 +39,8 @@ elseif race == "High Elf" then
 else
     leftGryphon:SetTexture("Interface\\Addons\\Deli_Ui\\img\\Wyvern")
     rightGryphon:SetTexture("Interface\\Addons\\Deli_Ui\\img\\Wyvern")
+	leftGryphon:SetPoint("LEFT", MainMenuBarArtFrame, "LEFT", -90, 16)
+	rightGryphon:SetPoint("RIGHT", MainMenuBarArtFrame, "RIGHT", 90, 16)
 end
 
 --Size the endcaps
@@ -42,8 +49,5 @@ leftGryphon:SetHeight(126)
 rightGryphon:SetWidth(126)
 rightGryphon:SetHeight(126)
 
--- Position the new textures
-leftGryphon:SetPoint("LEFT", MainMenuBarArtFrame, "LEFT", -90, 12)
-rightGryphon:SetPoint("RIGHT", MainMenuBarArtFrame, "RIGHT", 90, 12)
 -- Flip the right texture
 rightGryphon:SetTexCoord(1, 0, 0, 1)

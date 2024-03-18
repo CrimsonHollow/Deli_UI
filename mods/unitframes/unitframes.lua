@@ -188,7 +188,7 @@ local playerNameText = PlayerFrame.healthbar.TextString
 playerNameText:SetHeight(30)
 
   TargetofTargetFrame:ClearAllPoints()
-   TargetofTargetFrame:SetPoint("BOTTOM", TargetFrame, 115, -15)
+   TargetofTargetFrame:SetPoint("BOTTOM", TargetFrame, 38, -15)
 
   -- Hook the PetFrame_Update function
     local new_PetFrame_Update = PetFrame_Update
