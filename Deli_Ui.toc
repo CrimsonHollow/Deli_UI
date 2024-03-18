@@ -11,8 +11,8 @@ mods\actionbars\DFHordeStatues.lua
 mods\actionbars\HD-ActionBars.lua
 mods\actionbars\MicroMenu.lua
 mods\actionbars\Reduced-actionbar.lua
-mods\actionbars\CooldownNumbers.lua
-mods\actionbars\Deli_XP.lua
+mods\actionbars\cooldownnumbers.lua
+mods\actionbars\xp.lua
 mods\actionbars\bags.lua
 mods\actionbars\rightbar-center.lua
 
@@ -20,7 +20,7 @@ mods\actionbars\rightbar-center.lua
 mods\castbar\castbar.lua
 
 #buffs
-mods\buffs\Deli_Buffs.lua
+mods\buffs\buffs.lua
 
 #minimap
 mods\minimap\minimap.lua
@@ -34,6 +34,7 @@ mods\other\classcolors.lua
 
 
 #unitframes
+mods\unitframes\blue-shaman.lua
 mods\unitframes\unitframes.lua
 mods\unitframes\abbrev-names.lua
 mods\unitframes\health-numbers-extended.lua
