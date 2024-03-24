@@ -11,13 +11,13 @@ Dragonflight.
 local addonpath = "Interface\\AddOns\\Deli_Ui"
 local customfont = addonpath .. "\\fonts\\PROTOTYPE.TTF"
 
-	
+
   PlayerFrameHealthBar:SetStatusBarTexture[[Interface\Addons\Deli_Ui\img\UI-StatusBar]]
   TargetFrameHealthBar:SetStatusBarTexture[[Interface\Addons\Deli_Ui\img\UI-StatusBar]]
   PlayerFrameTexture:SetTexture[[Interface\Addons\Deli_Ui\img\UI-TargetingFrame]]  
   PlayerStatusTexture:SetTexture[[Interface\Addons\Deli_Ui\img\UI-Player-Status]]  
   PlayerFrameHealthBar:SetPoint("TOPLEFT", 106, -23)
-
+  -- TargetFrameManaBar:SetStatusBarTexture[[Interface\Addons\Deli_Ui\img\Castbar\ToxiUI-grad]]
 
 --hide
 PlayerFrame.name:Hide()
@@ -161,7 +161,7 @@ petFrame.healthbar.TextString:SetJustifyH("CENTER")
 petFrame.manabar.TextString:SetPoint("CENTER", petFrame.manabar, "CENTER", 0, -2)
 petFrame.manabar.TextString:SetJustifyH("CENTER")
 PetName:ClearAllPoints()
-PetName:SetPoint("CENTER", petFrame.healthbar, "CENTER", -22, 15)
+PetName:SetPoint("CENTER", petFrame.healthbar, "CENTER", -12, 15)
 
 
 -- Get the MainMenuExpBar
@@ -170,9 +170,11 @@ local expBar = MainMenuExpBar
 expBar.TextString:SetFont(customfont, 10, "OUTLINE")
 expBar.TextString:SetTextColor(1, 1, 1)
  
-  PlayerFrameHealthBar:SetWidth(120)
+  PlayerFrameHealthBar:SetWidth(124)
   PlayerFrameHealthBar:SetHeight(30)
-  PlayerFrameManaBar:SetWidth(120)
+  PlayerFrameHealthBar:SetPoint("TOPLEFT", 102, -23)
+  PlayerFrameManaBar:SetWidth(126)
+  PlayerFrameManaBar:SetPoint("TOPLEFT", 102, -52)
   PlayerFrameBackground:SetWidth(122)
   PlayerStatusTexture:SetTexture[[Interface\Addons\Deli_Ui\img\UI-Player-Status]]
 
@@ -180,10 +182,24 @@ expBar.TextString:SetTextColor(1, 1, 1)
   TargetFrameHealthBar:SetPoint("TOPRIGHT", -103, -23)
   TargetFrameHealthBar:SetHeight(30)
   TargetFrameHealthBar:SetWidth(123)
-  TargetFrameManaBar:SetPoint("TOPRIGHT", -103, -52)
-  TargetFrameManaBar:SetWidth(123)
-  TargetFrameBackground:SetPoint("TOPRIGHT", -103, -22)
-  TargetFrameBackground:SetWidth(123)
+  TargetFrameManaBar:SetPoint("TOPRIGHT", -100, -52)
+  TargetFrameManaBar:SetWidth(127)
+  TargetFrameBackground:SetPoint("TOPRIGHT", -100, -22)
+  TargetFrameBackground:SetWidth(127)
+  
+  
+  PetFrameHealthBar:SetWidth(69)
+  PetFrameHealthBar:SetHeight(10)
+  PetFrameHealthBar:ClearAllPoints()
+  PetFrameHealthBar:SetPoint("TOPRIGHT", -15, -20)
+
+  PetFrameManaBar:SetWidth(69)
+  PetFrameManaBar:SetHeight(8)
+  PetFrameManaBar:ClearAllPoints()
+  PetFrameManaBar:SetPoint("TOPRIGHT", -15, -30)
+  
+  
+  
   --TargetFrame:SetWidth(120)
   -- TargetLevelText:ClearAllPoints()
   -- TargetLevelText:SetPoint("BOTTOMRIGHT",TargetFrameHealthBar, 65, -20)
