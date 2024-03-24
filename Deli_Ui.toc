@@ -15,6 +15,10 @@ mods\actionbars\cooldownnumbers.lua
 mods\actionbars\xp.lua
 mods\actionbars\bags.lua
 mods\actionbars\rightbar-center.lua
+mods\actionbars\mouseover-mainactionbar.lua
+mods\actionbars\mouseover-bottomactionbar.lua
+mods\actionbars\mouseover-controll.lua
+
 
 #castbar
 mods\castbar\castbar.lua
@@ -31,6 +35,9 @@ mods\other\Deli_Ui.lua
 mods\other\My_UI.lua
 mods\other\compare.lua
 mods\other\classcolors.lua
+mods\other\restyle-addons.lua
+mods\other\chat.lua
+mods\other\tooltip.lua
 
 
 #unitframes
@@ -38,10 +45,7 @@ mods\unitframes\blue-shaman.lua
 mods\unitframes\unitframes.lua
 mods\unitframes\abbrev-names.lua
 mods\unitframes\health-numbers-extended.lua
-mods\unitframes\target-castbar.lua
-mods\unitframes\target-debufftimer.lua
 mods\unitframes\targetbuffs.lua
-mods\unitframes\target-debufftimer.lua
 
 #libraries
 libs\libhealth.lua
