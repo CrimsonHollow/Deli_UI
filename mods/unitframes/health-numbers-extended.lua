@@ -49,8 +49,44 @@ hooksecurefunc = function(name, func, append)
   _G[name] = hooks[tostring(func)]["function"]
 end
 
+--Hook into Twows health strings
 
- 
+function TargetHealthCheck()
+	if ( UnitIsPlayer("target") ) then
+		local unitMinHP, unitMaxHP, unitCurrHP;
+		unitHPMin, unitHPMax = this:GetMinMaxValues();
+		unitCurrHP = this:GetValue();
+		this:GetParent().unitHPPercent = unitCurrHP / unitHPMax;
+		if ( UnitIsDead("target") ) then
+			TargetPortrait:SetVertexColor(0.35, 0.35, 0.35, 1.0);
+		elseif ( UnitIsGhost("target") ) then
+			TargetPortrait:SetVertexColor(0.2, 0.2, 0.75, 1.0);
+		elseif ( (this:GetParent().unitHPPercent > 0) and (this:GetParent().unitHPPercent <= 0.2) ) then
+			TargetPortrait:SetVertexColor(1.0, 0.0, 0.0);
+		else
+			TargetPortrait:SetVertexColor(1.0, 1.0, 1.0, 1.0);
+		end
+	end
+
+	if ( (UnitHealth("target") <= 0) and UnitIsConnected("target") ) then
+		TargetHPText:Hide()
+		TargetHPPercText:Hide()
+	else
+		if GetCVar("statusBarText") == "1" then
+			TargetHPText:Hide()
+			TargetHPPercText:Hide()
+
+			TargetHPText:SetText(TargetFrame_FormatHealth(UnitHealth("target")))
+			TargetHPPercText:SetText(math.floor(UnitHealth("target") / UnitHealthMax("target") * 100) .. "%")
+		else
+			TargetHPText:Hide()
+			TargetHPPercText:Hide()
+		end
+	end
+end
+
+--Create our own texstrings
+
  TargetofTargetFrame.StatusTexts = CreateFrame("Frame", nil, TargetofTargetFrame)
   TargetofTargetFrame.StatusTexts:SetAllPoints(TargetofTargetFrame)
   TargetofTargetFrame.StatusTexts:SetFrameStrata("LOW")
