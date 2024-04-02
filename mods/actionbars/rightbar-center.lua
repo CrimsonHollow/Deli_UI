@@ -1,10 +1,4 @@
---[[
-Author: ShaguTweaks
-Modified by: YouTube.com/@TheLinuxITGuy
-Built on: Linux Mint Debian Edition 12
-This lua file hides the original Blizzard art work from 1.12. I've created new buttons and textured them to match
-Dragonflight.
-]]
+
 
 ShaguTweaks = CreateFrame("Frame")
 
@@ -37,11 +31,12 @@ ShaguTweaks.GetGlobalEnv = function()
 
 
   for i = 2, 12 do
+		local b = 5
         local button = _G['MultiBarRightButton' .. i]
         button:ClearAllPoints()
 		button:SetFrameStrata("BACKGROUND")
-         if mod(i - 1, 4) == 0 then
-             button:SetPoint('TOP', _G['MultiBarRightButton' .. (i - 4)], 'BOTTOM', 0, -6)
+         if mod(i - 1, b) == 0 then
+             button:SetPoint('TOP', _G['MultiBarRightButton' .. (i - b)], 'BOTTOM', 0, -6)
          else
              button:SetPoint('LEFT', _G['MultiBarRightButton' .. (i - 1)], 'RIGHT', 6, 0)
          end
@@ -49,6 +44,15 @@ ShaguTweaks.GetGlobalEnv = function()
  -- anchor button 1 so 12 buttons are centered above default bars
 MultiBarRightButton1:ClearAllPoints()
 MultiBarRightButton1:SetFrameStrata("BACKGROUND")
-MultiBarRightButton1:SetPoint("CENTER",UIParent,"CENTER",-63,-200)
+MultiBarRightButton1:SetPoint("CENTER",UIParent,"CENTER",-83,-185)
 
+function barsize(MultiBarRightButton)
+for i = 1, 12 do
+	local bar =_G['MultiBarRightButton' .. i]
+	bar:SetScale(1.1)
+	
+	
+end
+	end
 
+barsize()
