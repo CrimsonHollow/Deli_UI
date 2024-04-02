@@ -10,12 +10,12 @@
         -- Player
         PlayerFrame:SetClampedToScreen(true)
         PlayerFrame:ClearAllPoints()
-        PlayerFrame:SetPoint("RIGHT", UIParent, "CENTER", -100, -210)
+        PlayerFrame:SetPoint("RIGHT", UIParent, "CENTER", -130, -210)
 
         -- Target
         TargetFrame:SetClampedToScreen(true)
         TargetFrame:ClearAllPoints()
-        TargetFrame:SetPoint("LEFT", UIParent, "CENTER", 100, -210)
+        TargetFrame:SetPoint("LEFT", UIParent, "CENTER", 130, -210)
 		
 		--TargetOfTarget
 		TargetFrame:SetClampedToScreen(true)
