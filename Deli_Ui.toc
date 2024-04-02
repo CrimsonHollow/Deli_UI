@@ -46,6 +46,10 @@ mods\unitframes\unitframes.lua
 mods\unitframes\abbrev-names.lua
 mods\unitframes\health-numbers-extended.lua
 mods\unitframes\targetbuffs.lua
+mods\unitframes\StylePoints.xml
+## SavedVariables: StylePoints_Config
+
+
 
 #libraries
 libs\libhealth.lua
