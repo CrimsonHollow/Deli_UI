@@ -9,6 +9,8 @@ This is a standalone addon of my favourite features from addons like
 
 [tDF](https://github.com/TheLinuxITGuy/Turtle-Dragonflight) by [TheLinuxITGuy](https://github.com/TheLinuxITGuy)
 
+[StylePoints](https://github.com/Monteo/RoguePack/tree/master/StylePoints) by [Monteo](https://github.com/Monteo) for combopoints
+
 With the help and patience of [Ennea](https://github.com/Ennea)  and [TheLinuxITGuy](https://github.com/TheLinuxITGuy)
 
 It for me is a lightweight mix of what i like in a UI,If you want something specific/want a suggestion let me know on discord! Username: Arkoudokinigos
